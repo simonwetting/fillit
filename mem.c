@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   mem.c                                              :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
+/*   By: swetting <swetting@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/15 11:00:18 by anonymous      #+#    #+#                */
-/*   Updated: 2019/03/15 11:00:18 by anonymous     ########   odam.nl         */
+/*   Updated: 2019/03/20 17:03:20 by swetting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ mem_t	*new_mem(size_t size)
 	new->mem = (void *)malloc(size);
 	new->len = 0;
 	new->size = size;
+	return (new);
 }
 
 

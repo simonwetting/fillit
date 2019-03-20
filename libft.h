@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   libft.h                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: swetting <swetting@student.codam.nl>         +#+                     */
+/*   By: simonwetting <simonwetting@student.coda      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/13 13:45:12 by swetting       #+#    #+#                */
-/*   Updated: 2019/02/12 15:21:20 by swetting      ########   odam.nl         */
+/*   Updated: 2019/03/20 12:14:17 by simonwettin   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

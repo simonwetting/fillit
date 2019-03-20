@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   pointers.h                                         :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
+/*   By: swetting <swetting@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/14 12:35:52 by anonymous      #+#    #+#                */
-/*   Updated: 2019/03/14 12:35:52 by anonymous     ########   odam.nl         */
+/*   Updated: 2019/03/20 16:08:03 by swetting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ typedef struct	s_pointer_array
 	void		**pa;
 	size_t		len;
 	size_t		size;
-}				pa_t;
+}				t_pa;
 #endif

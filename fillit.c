@@ -3,80 +3,56 @@
 /*                                                        ::::::::            */
 /*   fillit.c                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: simonwetting <simonwetting@student.coda      +#+                     */
+/*   By: swetting <swetting@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/06 10:30:21 by swetting       #+#    #+#                */
-/*   Updated: 2019/03/07 11:20:39 by simonwettin   ########   odam.nl         */
+/*   Updated: 2019/03/20 17:28:30 by swetting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include "error_handler.c"
-// #include "resizable_string.c"
+#include "libft.h"
+#include "get_next_line.h"
 
-typedef char byte;
+int		get_next_tetrimino(int fd, char ***tetrimino)
+{
+	char	line_count;
 
-// int		read_next_tetrimino(int fd)
-// {
-// 	char	tetrimino[4][2];
-// 	char	*data_read;
-// 	int 	i;
-// 	char	pos[2];
-// 	int		pos_count;
+	line_count = 0;
+	while (line_count < 4)
+	{
+		get_next_line(fd, *tetrimino + line_count);
+		line_count++;
+	}
+}
 
-// 	if (read(fd, data_read, 21) < 21)
-// 		return (-1);
-// 	pos[0] = 0;
-// 	pos[1] = 0;
-// 	pos_count = 0;
-// 	while (i < 21)
-// 	{
-// 		if (data_read[i] == '#')
-// 			tetrimino[pos_count] = pos;
-		
-// 	}
-// }
-// int		read_tetriminos(char *filename)
-// {
-// 	int		fd;
+char	***read_tetriminos(char *filename)
+{
+	t_pa	*tetriminos;
+	char	**tetrimino;
+	int		fd;
 
-// 	fd = open(filename, O_RDONLY);
-// 	if (fd == -1)
-// 		return (-1);
-	
-// }
+	tetriminos = new_pa(1);
+	tetrimino = (char **)malloc(sizeof(char *) * 4);
+	fd = open(filename, O_RDONLY);
+	while (get_next_tetrimino(fd, &tetrimino))
+		add_pointer(&tetriminos, "tetrimino");
+	for (int n = 0; n < 4; n++)
+		printf("%s\n", tetrimino[n]);
+}
 
 int		main(int argc, char **argv)
 {
 	// test_me();
-	// add_group("aap");
-	// add_group("Test1");
-	// get_group("test");
-	// get_group("aap");
-	// get_group("Test1");
-	// pa_t	*pa;
-	// int		i;
+	t_pa	***tetriminos;
 
-	// pa = new_pa(1);
-	// add_pointer(&pa, ft_strdup("Test1"));
-	// add_pointer(&pa, ft_strdup("Test2"));
-	// add_pointer(&pa, ft_strdup("Test3"));
-	// add_pointer(&pa, ft_strdup("Test4"));
-	// add_pointer(&pa, ft_strdup("Test5"));
-	// add_pointer(&pa, ft_strdup("Test6"));
-	// add_pointer(&pa, ft_strdup("Test7"));
-	// add_pointer(&pa, ft_strdup("Test8"));
-	// add_pointer(&pa, ft_strdup("Test9"));
-	// add_pointer(&pa, ft_strdup("Test10"));
-	// // repp(pa->pa+4, ft_strdup("test"));
-	// replace_pointer(pa, 7, ft_strdup("TEST"));
-	// i = 0;
-	// while (i < pa->len)
-	// 	printf("[%i] = %s\n", i, pa->pa[i++]);
-	mem_t	*mem;
-
-	mem = new_mem(100);
-	ft_strncpy(mem->mem, "Hello", 3);
-	printf("%s\n", mem->mem);
+	if (argc != 2)
+	{
+		ft_putendl("You should specify 1 file as a parameter");
+		return (-1);
+	}
+	tetriminos = read_tetriminos();
 }

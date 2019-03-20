@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   error_handler.c                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: anonymous <anonymous@student.codam.nl>       +#+                     */
+/*   By: swetting <swetting@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/08 11:02:19 by anonymous      #+#    #+#                */
-/*   Updated: 2019/03/08 11:02:19 by anonymous     ########   odam.nl         */
+/*   Updated: 2019/03/20 17:11:40 by swetting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,12 @@ msg_id_t	add_msg(char *msg)
 	if (!messages)
 		messages = new_pa(1);
 	add_pointer(&messages, msg);
+	return (messages->len - 1);
 }
 
 char	*new_error_code(char *code, msg_id_t msg_id)
 {
-
+	return (NULL);
 }
 
 int			add_error_code(char *group_name, int code, char *msg)
@@ -97,9 +98,41 @@ int			add_error_code(char *group_name, int code, char *msg)
 	if (!msg_id)
 		msg_id = add_msg(msg);
 	group->codes = ft_strjoin(group->codes, "abc");
+	return (0);
 }
 
 void		test_me(void)
 {
-	printf("groups>%p\nmessages>%p\nmsg_count>%p%n", groups, messages, msg_count);
+	printf("groups>%p\nmessages>%p\nmsg_count>%i\n", groups, messages, msg_count);
+	// test_me();
+	// add_group("aap");
+	// add_group("Test1");
+	// get_group("test");
+	// get_group("aap");
+	// get_group("Test1");
+	t_pa	*pa;
+	// int		i;
+
+	pa = new_pa(1);
+	add_pointer(&pa, ft_strdup("Test1"));
+	add_pointer(&pa, ft_strdup("Test2"));
+	add_pointer(&pa, ft_strdup("Test3"));
+	add_pointer(&pa, ft_strdup("Test4"));
+	add_pointer(&pa, ft_strdup("Test5"));
+	add_pointer(&pa, ft_strdup("Test6"));
+	add_pointer(&pa, ft_strdup("Test7"));
+	add_pointer(&pa, ft_strdup("Test8"));
+	add_pointer(&pa, ft_strdup("Test9"));
+	add_pointer(&pa, ft_strdup("Test10"));
+	// repp(pa->pa+4, ft_strdup("test"));
+	replace_pointer(pa, 7, ft_strdup("TEST"));
+	iterate_pa(pa, &ft_putendl);
+	// i = 0;
+	// while (i < pa->len)
+	// 	printf("[%i] = %s\n", i, pa->pa[i++]);
+	// mem_t	*mem;
+
+	// mem = new_mem(100);
+	// ft_strncpy(mem->mem, "Hello", 3);
+	// printf("%s\n", mem->mem);
 }

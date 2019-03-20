@@ -3,13 +3,13 @@
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
-#    By: anonymous <anonymous@student.codam.nl>       +#+                      #
+#    By: swetting <swetting@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/03/08 13:16:08 by anonymous      #+#    #+#                 #
-#    Updated: 2019/03/08 13:16:08 by anonymous     ########   odam.nl          #
+#    Updated: 2019/03/20 17:12:08 by swetting      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 win:
 	gcc -g fillit.c libft.a
-	./a.exe
+	./a.out
