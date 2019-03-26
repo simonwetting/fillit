@@ -11,5 +11,6 @@
 # **************************************************************************** #
 
 win:
-	gcc -g fillit.c libft.a
-	./a.out
+	gcc -g -c fillit.c get_next_line.c error_handler.c mem.c pointers.c
+	gcc	-g *.o libft.a
+	./a.exe tetriminos

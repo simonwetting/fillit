@@ -20,4 +20,10 @@ typedef struct	s_pointer_array
 	size_t		len;
 	size_t		size;
 }				t_pa;
+
+t_pa			*new_pa(size_t size);
+void			resize_pa(t_pa **apa, size_t size);
+void			replace_pointer(t_pa *pa, int index, void *new);
+void			iterate_pa(t_pa *pa, void f(char *p));
+void			add_pointer(t_pa **apa, void *p);
 #endif
